@@ -19,7 +19,7 @@ GenoTriage is a B.Tech final year project that provides real-time pathogenicity 
 |---|---|
 | Frontend | HTML, Tailwind CSS, Chart.js |
 | Backend | Python, FastAPI |
-| ML Model | Scikit-learn pipeline (trained on hg38 variants) |
+| ML Model | Scikit-learn pipeline with stacked ensembling of Random Forest + LightGBM + XGBoost (trained on hg38 variants) |
 | Data Sources | gnomAD, ClinVar, PharmGKB, MyVariant.info |
 
 ## Getting Started
