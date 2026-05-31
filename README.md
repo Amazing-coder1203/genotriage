@@ -26,7 +26,6 @@ GenoTriage is a B.Tech final year project that provides real-time pathogenicity 
 <img width="719" height="361" alt="image" src="https://github.com/user-attachments/assets/d2b27976-985b-4e27-b5ce-90d74049b307" />
 <img width="717" height="612" alt="image" src="https://github.com/user-attachments/assets/9000720f-7bc3-451d-8795-2af8e0a886e4" />
 <img width="764" height="768" alt="image" src="https://github.com/user-attachments/assets/8f6685d1-5a99-45be-bf37-ddc6c8171bfd" />
-<img width="267" height="150" alt="image" src="https://github.com/user-attachments/assets/c91f2f47-3a97-4771-9029-9d434739489d" />
 
 
 ## Getting Started
