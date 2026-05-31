@@ -4,6 +4,8 @@
 
 GenoTriage is a B.Tech final year project that provides real-time pathogenicity predictions for human genomic variants using a trained machine learning pipeline.
 
+Colab Notebook: https://colab.research.google.com/drive/1goIMILCBP8PhumT4YJFbhu7sAgPvLpP_?usp=sharing
+
 ## Features
 
 - 🔬 **Single Variant Analysis** — Input a variant (chr, pos, ref, alt) and get instant AI-driven pathogenicity predictions with confidence scores
