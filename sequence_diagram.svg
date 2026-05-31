@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%" style="background-color: transparent; font-family: 'Inter', system-ui, sans-serif;">
+  <!-- Definitions for Canva-safe Markers -->
+  <defs>
+    <!-- Solid purple arrowhead -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#7c3aed" />
+    </marker>
+    <!-- Dashed gray arrowhead for returns -->
+    <marker id="arrow-return" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4f46e5" />
+    </marker>
+  </defs>
+
+  <!-- Title Center Header -->
+  <text x="800" y="55" fill="#1e293b" font-size="28" font-weight="900" text-anchor="middle">Request-Response Asynchronous Lifecycle</text>
+
+  <!-- ==================== PARTICIPANTS (LIFELINES) ==================== -->
+  
+  <!-- Participant 1: User / React UI -->
+  <g>
+    <line x1="150" y1="180" x2="150" y2="760" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 6" />
+    <rect x="50" y="110" width="200" height="70" rx="12" fill="#ffffff" stroke="#7c3aed" stroke-width="2.5" />
+    <text x="150" y="145" fill="#4c1d95" font-size="16" font-weight="800" text-anchor="middle">React UI (Client)</text>
+    <text x="150" y="165" fill="#7c3aed" font-size="11.5" font-weight="800" text-anchor="middle">BROWSER PORTAL</text>
+  </g>
+
+  <!-- Participant 2: FastAPI Backend -->
+  <g>
+    <line x1="500" y1="180" x2="500" y2="760" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 6" />
+    <rect x="400" y="110" width="200" height="70" rx="12" fill="#ffffff" stroke="#7c3aed" stroke-width="2.5" />
+    <text x="500" y="145" fill="#4c1d95" font-size="16" font-weight="800" text-anchor="middle">FastAPI Backend</text>
+    <text x="500" y="165" fill="#7c3aed" font-size="11.5" font-weight="800" text-anchor="middle">LOCAL SERVER</text>
+  </g>
+
+  <!-- Participant 3: MyVariant API -->
+  <g>
+    <line x1="850" y1="180" x2="850" y2="760" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 6" />
+    <rect x="750" y="110" width="200" height="70" rx="12" fill="#ffffff" stroke="#ddd6fe" stroke-width="2" />
+    <text x="850" y="145" fill="#4c1d95" font-size="16" font-weight="800" text-anchor="middle">MyVariant.info</text>
+    <text x="850" y="165" fill="#475569" font-size="11.5" font-weight="700" text-anchor="middle">EXTERNAL API</text>
+  </g>
+
+  <!-- Participant 4: Local ML Model -->
+  <g>
+    <line x1="1180" y1="180" x2="1180" y2="760" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 6" />
+    <rect x="1080" y="110" width="200" height="70" rx="12" fill="#ffffff" stroke="#ddd6fe" stroke-width="2" />
+    <text x="1180" y="145" fill="#4c1d95" font-size="16" font-weight="800" text-anchor="middle">Local ML Model</text>
+    <text x="1180" y="165" fill="#475569" font-size="11.5" font-weight="700" text-anchor="middle">LOCAL CLASSIFIER</text>
+  </g>
+
+  <!-- Participant 5: PharmGKB API -->
+  <g>
+    <line x1="1450" y1="180" x2="1450" y2="760" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 6" />
+    <rect x="1350" y="110" width="200" height="70" rx="12" fill="#ffffff" stroke="#ddd6fe" stroke-width="2" />
+    <text x="1450" y="145" fill="#4c1d95" font-size="16" font-weight="800" text-anchor="middle">PharmGKB API</text>
+    <text x="1450" y="165" fill="#475569" font-size="11.5" font-weight="700" text-anchor="middle">EXTERNAL CDSS</text>
+  </g>
+
+
+  <!-- ==================== ACTIVATION BARS ==================== -->
+  
+  <!-- React UI Activation -->
+  <rect x="145" y="220" width="10" height="520" rx="4" fill="#ddd6fe" />
+  
+  <!-- FastAPI Activation -->
+  <rect x="495" y="220" width="10" height="520" rx="4" fill="#7c3aed" />
+  
+  <!-- MyVariant API Activation -->
+  <rect x="845" y="270" width="10" height="90" rx="4" fill="#a78bfa" />
+  
+  <!-- Local ML Model Activation -->
+  <rect x="1175" y="410" width="10" height="80" rx="4" fill="#a78bfa" />
+  
+  <!-- PharmGKB API Activation -->
+  <rect x="1445" y="540" width="10" height="90" rx="4" fill="#a78bfa" />
+
+
+  <!-- ==================== SEQUENCE INTERACTIONS ==================== -->
+
+  <!-- 1. POST /api/triage -->
+  <g>
+    <path d="M 155 230 L 492 230" fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="325" y="222" fill="#4c1d95" font-size="13" font-weight="800" text-anchor="middle">1. POST /api/triage</text>
+    <text x="325" y="244" fill="#475569" font-size="12" font-family="'JetBrains Mono', monospace" text-anchor="middle">payload: {chr, position, ref, alt}</text>
+  </g>
+
+  <!-- 2. GET MyVariant.info -->
+  <g>
+    <path d="M 505 280 L 842 280" fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="675" y="272" fill="#4c1d95" font-size="13" font-weight="800" text-anchor="middle">2. GET Annotation Data</text>
+    <text x="675" y="294" fill="#475569" font-size="12" font-family="'JetBrains Mono', monospace" text-anchor="middle">URI: /v3/variant/{hgvs_notation}</text>
+  </g>
+
+  <!-- 3. Return: MyVariant JSON -->
+  <g>
+    <path d="M 845 350 L 508 350" fill="none" stroke="#4f46e5" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrow-return)" />
+    <text x="675" y="342" fill="#4f46e5" font-size="13" font-weight="800" text-anchor="middle">3. Return JSON annotations</text>
+    <text x="675" y="364" fill="#475569" font-size="12" font-family="'JetBrains Mono', monospace" text-anchor="middle">SIFT, PolyPhen, CADD, gnomAD, dbSNP rsID</text>
+  </g>
+
+  <!-- 4. ML Model: Predict -->
+  <g>
+    <path d="M 505 420 L 1172 420" fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="837" y="412" fill="#4c1d95" font-size="13" font-weight="800" text-anchor="middle">4. Load Classifier Prediction</text>
+    <text x="837" y="434" fill="#475569" font-size="12" font-family="'JetBrains Mono', monospace" text-anchor="middle">predict_proba([features_matrix])</text>
+  </g>
+
+  <!-- 5. Return: ML Score -->
+  <g>
+    <path d="M 1175 480 L 508 480" fill="none" stroke="#4f46e5" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrow-return)" />
+    <text x="837" y="472" fill="#4f46e5" font-size="13" font-weight="800" text-anchor="middle">5. Return Pathogenicity Score</text>
+    <text x="837" y="494" fill="#475569" font-size="12" font-family="'JetBrains Mono', monospace" text-anchor="middle">score: 0.885, verdict: Pathogenic</text>
+  </g>
+
+  <!-- 6. GET PharmGKB Dosing guidelines -->
+  <g>
+    <path d="M 505 550 L 1442 550" fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="972" y="542" fill="#4c1d95" font-size="13" font-weight="800" text-anchor="middle">6. GET Dosing Guidelines</text>
+    <text x="972" y="564" fill="#475569" font-size="12" font-family="'JetBrains Mono', monospace" text-anchor="middle">URI: /guidelines?rsid={resolved_rsid}</text>
+  </g>
+
+  <!-- 7. Return: PharmGKB Guidelines -->
+  <g>
+    <path d="M 1445 620 L 508 620" fill="none" stroke="#4f46e5" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrow-return)" />
+    <text x="972" y="612" fill="#4f46e5" font-size="13" font-weight="800" text-anchor="middle">7. Return Matching Guidelines</text>
+    <text x="972" y="634" fill="#475569" font-size="12" font-family="'JetBrains Mono', monospace" text-anchor="middle">dosing guidelines &amp; clinical evidence levels</text>
+  </g>
+
+  <!-- 8. Unified JSON Response -->
+  <g>
+    <path d="M 495 710 L 158 710" fill="none" stroke="#4f46e5" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrow-return)" />
+    <text x="325" y="702" fill="#4f46e5" font-size="13" font-weight="800" text-anchor="middle">8. HTTP 200 OK Response</text>
+    <text x="325" y="724" fill="#475569" font-size="12" font-family="'JetBrains Mono', monospace" text-anchor="middle">JSON: {pathogenicity_verdict, evidence, guidelines}</text>
+  </g>
+
+  <!-- Bottom lifelines boxes -->
+  <g transform="translate(0, 650)">
+    <!-- Participant 1 UI -->
+    <rect x="50" y="110" width="200" height="40" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-width="2.5" />
+    <text x="150" y="135" fill="#4c1d95" font-size="14" font-weight="800" text-anchor="middle">React UI</text>
+    
+    <!-- Participant 2 FastAPI -->
+    <rect x="400" y="110" width="200" height="40" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-width="2.5" />
+    <text x="500" y="135" fill="#4c1d95" font-size="14" font-weight="800" text-anchor="middle">FastAPI Backend</text>
+
+    <!-- Participant 3 MyVariant -->
+    <rect x="750" y="110" width="200" height="40" rx="8" fill="#ffffff" stroke="#ddd6fe" stroke-width="2" />
+    <text x="850" y="135" fill="#4c1d95" font-size="14" font-weight="800" text-anchor="middle">MyVariant.info</text>
+
+    <!-- Participant 4 Local ML -->
+    <rect x="1080" y="110" width="200" height="40" rx="8" fill="#ffffff" stroke="#ddd6fe" stroke-width="2" />
+    <text x="1180" y="135" fill="#4c1d95" font-size="14" font-weight="800" text-anchor="middle">Local ML Model</text>
+
+    <!-- Participant 5 PharmGKB -->
+    <rect x="1350" y="110" width="200" height="40" rx="8" fill="#ffffff" stroke="#ddd6fe" stroke-width="2" />
+    <text x="1450" y="135" fill="#4c1d95" font-size="14" font-weight="800" text-anchor="middle">PharmGKB API</text>
+  </g>
+</svg>

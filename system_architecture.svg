@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%" style="background-color: transparent; font-family: 'Inter', system-ui, sans-serif;">
+  <!-- Definitions for Canva-safe Markers -->
+  <defs>
+    <!-- Simple Solid Color Marker for Arrowheads -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7c3aed" />
+    </marker>
+  </defs>
+
+  <!-- Title Center Header -->
+  <text x="800" y="50" fill="#1e293b" font-size="28" font-weight="900" text-anchor="middle">Master System Architecture Flowchart</text>
+
+  <!-- ==================== CLIENT LAYER (React UI) ==================== -->
+  <g transform="translate(100, 320)">
+    <rect width="320" height="260" rx="16" fill="#ffffff" stroke="#7c3aed" stroke-width="2.5" />
+    <!-- Layer Badge -->
+    <rect x="25" y="-12" width="110" height="24" rx="12" fill="#7c3aed" />
+    <text x="80" y="4" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">CLIENT LAYER</text>
+
+    <text x="25" y="45" fill="#4c1d95" font-size="20" font-weight="800">React Frontend</text>
+    <text x="25" y="85" fill="#475569" font-size="15" font-weight="500">• Interactive SPA (TypeScript)</text>
+    <text x="25" y="115" fill="#475569" font-size="15" font-weight="500">• User coordinate input (hg38)</text>
+    <text x="25" y="145" fill="#475569" font-size="15" font-weight="500">• Dynamic results visualizer</text>
+    <text x="25" y="175" fill="#475569" font-size="15" font-weight="500">• PDF Clinical report generation</text>
+    <text x="25" y="205" fill="#475569" font-size="15" font-weight="500">• Handles patient metadata</text>
+  </g>
+
+
+  <!-- ==================== CONNECTOR: REACT -> FASTAPI ==================== -->
+  <path d="M 420 450 L 538 450" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow)" />
+  <text x="479" y="415" fill="#7c3aed" font-size="12" font-weight="800" text-anchor="middle">HTTPS POST</text>
+  <text x="479" y="435" fill="#475569" font-size="11.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">/api/triage</text>
+  
+  <!-- Return Arrow from FastAPI to React UI -->
+  <path d="M 538 470 L 422 470" fill="none" stroke="#a78bfa" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrow)" />
+  <text x="479" y="495" fill="#a78bfa" font-size="11.5" font-weight="700" text-anchor="middle">JSON Response</text>
+
+
+  <!-- ==================== APPLICATION LAYER (FastAPI Backend) ==================== -->
+  <g transform="translate(550, 300)">
+    <rect width="340" height="300" rx="16" fill="#ffffff" stroke="#7c3aed" stroke-width="3" />
+    <!-- Layer Badge -->
+    <rect x="25" y="-12" width="140" height="24" rx="12" fill="#7c3aed" />
+    <text x="95" y="4" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">APPLICATION LAYER</text>
+
+    <text x="25" y="45" fill="#4c1d95" font-size="20" font-weight="800">FastAPI Backend</text>
+    <text x="25" y="85" fill="#475569" font-size="14.5" font-weight="500">• Input verification (Pydantic validation)</text>
+    <text x="25" y="115" fill="#475569" font-size="14.5" font-weight="500">• Parallel background query dispatcher</text>
+    <text x="25" y="145" fill="#be123c" font-size="14.5" font-weight="700">• Feature imputation (default = -1)</text>
+    <text x="25" y="175" fill="#475569" font-size="14.5" font-weight="500">• ML model integration coordinator</text>
+    <text x="25" y="205" fill="#475569" font-size="14.5" font-weight="500">• PharmGKB server-side dosing filter</text>
+    <text x="25" y="235" fill="#475569" font-size="14.5" font-weight="500">• Assembles unified clinical payload</text>
+    <text x="25" y="265" fill="#4f46e5" font-size="13" font-family="'JetBrains Mono', monospace">Uvicorn / ASGI Server</text>
+  </g>
+
+
+  <!-- ==================== THREE-WAY BRANCH SPLIT CONNECTORS ==================== -->
+  <!-- Main horizontal trunk out of FastAPI -->
+  <path d="M 890 450 L 960 450" fill="none" stroke="#7c3aed" stroke-width="2.5" />
+  
+  <!-- Vertical distributor spine -->
+  <path d="M 960 210 L 960 690" fill="none" stroke="#7c3aed" stroke-width="2.5" />
+
+  <!-- Branch 1 (Top) Connector -->
+  <path d="M 960 210 L 1088 210" fill="none" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow)" />
+  <text x="1024" y="195" fill="#7c3aed" font-size="11.5" font-weight="800" text-anchor="middle">2a. PREDICT</text>
+  
+  <!-- Branch 2 (Middle) Connector -->
+  <path d="M 960 450 L 1088 450" fill="none" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow)" />
+  <text x="1024" y="435" fill="#7c3aed" font-size="11.5" font-weight="800" text-anchor="middle">1. ANNOTATE</text>
+
+  <!-- Branch 3 (Bottom) Connector -->
+  <path d="M 960 690 L 1088 690" fill="none" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow)" />
+  <text x="1024" y="675" fill="#7c3aed" font-size="11.5" font-weight="800" text-anchor="middle">2b. MATCH</text>
+
+
+  <!-- ==================== DATA & INFERENCE LAYER (3 Branches) ==================== -->
+
+  <!-- BRANCH 1: Local ML Model -->
+  <g transform="translate(1100, 130)">
+    <rect width="380" height="150" rx="14" fill="#ffffff" stroke="#ddd6fe" stroke-width="2.0" />
+    <!-- Step indicator badge -->
+    <rect x="25" y="-12" width="70" height="24" rx="12" fill="#7c3aed" />
+    <text x="60" y="4" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">LOCAL ML</text>
+
+    <text x="25" y="42" fill="#4c1d95" font-size="18" font-weight="800">Local Pathogenicity Model</text>
+    <text x="25" y="75" fill="#475569" font-size="14" font-weight="500">• Random Forest Classifier (.pkl binary)</text>
+    <text x="25" y="100" fill="#475569" font-size="14" font-weight="500">• Predicts pathogenicity score (0 to 1)</text>
+    <text x="25" y="125" fill="#4f46e5" font-size="13" font-family="'JetBrains Mono', monospace">Scikit-Learn (Local Memory)</text>
+  </g>
+  <!-- Return Arrow 1 -->
+  <path d="M 1100 240 L 990 240 L 990 440" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="3 3" />
+
+  <!-- BRANCH 2: MyVariant.info API -->
+  <g transform="translate(1100, 370)">
+    <rect width="380" height="150" rx="14" fill="#ffffff" stroke="#ddd6fe" stroke-width="2.0" />
+    <!-- Step indicator badge -->
+    <rect x="25" y="-12" width="90" height="24" rx="12" fill="#7c3aed" />
+    <text x="70" y="4" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">EXTERNAL API</text>
+
+    <text x="25" y="42" fill="#4c1d95" font-size="18" font-weight="800">MyVariant.info API</text>
+    <text x="25" y="75" fill="#475569" font-size="14" font-weight="500">• Query using parsed HGVS coordinates</text>
+    <text x="25" y="100" fill="#475569" font-size="14" font-weight="500">• Fetches SIFT, PolyPhen, CADD, and gnomAD</text>
+    <text x="25" y="125" fill="#4f46e5" font-size="13" font-family="'JetBrains Mono', monospace">Remote REST endpoint (https)</text>
+  </g>
+  <!-- Return Arrow 2 -->
+  <path d="M 1100 470 L 890 470" fill="none" stroke="#a78bfa" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrow)" />
+
+  <!-- BRANCH 3: PharmGKB API -->
+  <g transform="translate(1100, 610)">
+    <rect width="380" height="150" rx="14" fill="#ffffff" stroke="#ddd6fe" stroke-width="2.0" />
+    <!-- Step indicator badge -->
+    <rect x="25" y="-12" width="90" height="24" rx="12" fill="#7c3aed" />
+    <text x="70" y="4" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">EXTERNAL API</text>
+
+    <text x="25" y="42" fill="#4c1d95" font-size="18" font-weight="800">PharmGKB API</text>
+    <text x="25" y="75" fill="#475569" font-size="14" font-weight="500">• Query using resolved dbSNP rsID</text>
+    <text x="25" y="100" fill="#475569" font-size="14" font-weight="500">• Fetches pharmacogenomic dosing guidelines</text>
+    <text x="25" y="125" fill="#4f46e5" font-size="13" font-family="'JetBrains Mono', monospace">Remote REST endpoint (https)</text>
+  </g>
+  <!-- Return Arrow 3 -->
+  <path d="M 1100 710 L 980 710 L 980 460" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="3 3" />
+
+</svg>

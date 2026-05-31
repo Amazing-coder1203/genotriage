@@ -1,0 +1,49 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+venv/
+.venv/
+env/
+
+# Large model / data files
+*.pkl
+*.h5
+*.pt
+*.pth
+*.bin
+*.onnx
+*.parquet
+*.gz
+
+# Data / output / dump files
+*.csv
+*.json
+
+# Test & scratch scripts
+test.py
+test2.py
+test3.py
+test4.py
+generate_test.py
+generate_test_csv.py
+test_pharmakgb.py
+test_pipe1.py
+
+# GenePath folder (large binary artifacts)
+GenePath/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp

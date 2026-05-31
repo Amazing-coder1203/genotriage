@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 730" width="100%" height="100%" style="background-color: transparent; font-family: 'Inter', system-ui, sans-serif;">
+  <!-- Definitions for Canva-safe Markers -->
+  <defs>
+    <!-- Simple Solid Color Marker for Arrowheads -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7c3aed" />
+    </marker>
+  </defs>
+
+  <!-- ==================== HEADER ROW ==================== -->
+  <g>
+    <!-- Solid purple header background -->
+    <rect x="80" y="100" width="1440" height="60" rx="12" fill="#7c3aed" />
+    <!-- Headers texts -->
+    <text x="180" y="136" fill="#ffffff" font-size="16" font-weight="800" text-anchor="middle">TOOL &amp; VERSION</text>
+    <text x="500" y="136" fill="#ffffff" font-size="16" font-weight="800" text-anchor="middle">UNDERLYING TECHNOLOGY</text>
+    <text x="925" y="136" fill="#ffffff" font-size="16" font-weight="800" text-anchor="middle">PRIMARY CLINICAL STRENGTHS</text>
+    <text x="1335" y="136" fill="#ffffff" font-size="16" font-weight="800" text-anchor="middle">LIMITATIONS / NON-CODING CAPABILITY</text>
+  </g>
+
+  <!-- ==================== ROW 1: SIFT ==================== -->
+  <g>
+    <!-- Row outline -->
+    <rect x="80" y="180" width="1440" height="140" rx="12" fill="#ffffff" stroke="#ddd6fe" stroke-width="2" />
+    
+    <!-- Col 1: Tool info -->
+    <text x="100" y="222" fill="#4c1d95" font-size="20" font-weight="800">SIFT</text>
+    <text x="100" y="247" fill="#7c3aed" font-size="12" font-weight="700">v6.0 (2016)</text>
+    <text x="100" y="272" fill="#475569" font-size="12" font-style="italic">Ng &amp; Henikoff</text>
+    
+    <!-- Col 2: Technology -->
+    <text x="300" y="210" fill="#475569" font-size="14.5" font-weight="500">• Sequence homology alignments (PSI-BLAST)</text>
+    <text x="300" y="232" fill="#475569" font-size="14.5" font-weight="500">  to measure evolutionary constraint.</text>
+    <text x="300" y="254" fill="#475569" font-size="14.5" font-weight="500">• Dirichlet mixture probability calculation</text>
+    <text x="300" y="276" fill="#475569" font-size="14.5" font-weight="500">  for chemical intolerability of substitutions.</text>
+
+    <!-- Col 3: Strengths -->
+    <text x="720" y="210" fill="#475569" font-size="14.5" font-weight="500">• Extremely fast, low-cost computational query.</text>
+    <text x="720" y="232" fill="#475569" font-size="14.5" font-weight="500">• Well-established benchmark utilized heavily in</text>
+    <text x="720" y="254" fill="#475569" font-size="14.5" font-weight="500">  clinical interpretation standards (ACMG).</text>
+    <text x="720" y="276" fill="#475569" font-size="14.5" font-weight="500">• High sensitivity for evolutionary conservation.</text>
+
+    <!-- Col 4: Limitations -->
+    <text x="1150" y="210" fill="#475569" font-size="14.5" font-weight="500">• Restricted to coding missense changes.</text>
+    <text x="1150" y="232" fill="#475569" font-size="14.5" font-weight="500">• High false-positive rate (overpredicts damage).</text>
+    <text x="1150" y="256" fill="#be123c" font-size="14.5" font-weight="800">• Completely blind to non-coding variants</text>
+    <text x="1150" y="278" fill="#be123c" font-size="14.5" font-weight="800">  (promoters, enhancers, deep intronic loci).</text>
+  </g>
+
+  <!-- ==================== ROW 2: PolyPhen-2 ==================== -->
+  <g>
+    <!-- Row outline -->
+    <rect x="80" y="335" width="1440" height="140" rx="12" fill="#ffffff" stroke="#ddd6fe" stroke-width="2" />
+    
+    <!-- Col 1: Tool info -->
+    <text x="100" y="377" fill="#4c1d95" font-size="20" font-weight="800">PolyPhen-2</text>
+    <text x="100" y="402" fill="#7c3aed" font-size="12" font-weight="700">v2.2.3 (2013)</text>
+    <text x="100" y="427" fill="#475569" font-size="12" font-style="italic">Adzhubei et al.</text>
+    
+    <!-- Col 2: Technology -->
+    <text x="300" y="365" fill="#475569" font-size="14.5" font-weight="500">• Naive Bayes classifier integrating 3D protein</text>
+    <text x="300" y="387" fill="#475569" font-size="14.5" font-weight="500">  structure coordinates &amp; sequence alignments.</text>
+    <text x="300" y="409" fill="#475569" font-size="14.5" font-weight="500">• Utilizes structural maps from PDB/CATH and</text>
+    <text x="300" y="431" fill="#475569" font-size="14.5" font-weight="500">  calculates position-specific independent counts (PSIC).</text>
+
+    <!-- Col 3: Strengths -->
+    <text x="720" y="365" fill="#475569" font-size="14.5" font-weight="500">• Higher specificity for substitutions inside folded</text>
+    <text x="720" y="387" fill="#475569" font-size="14.5" font-weight="500">  structural protein domains.</text>
+    <text x="720" y="409" fill="#475569" font-size="14.5" font-weight="500">• Assesses physical parameters like hydrophobic</text>
+    <text x="720" y="431" fill="#475569" font-size="14.5" font-weight="500">  cores, salt bridges, and binding interfaces.</text>
+
+    <!-- Col 4: Limitations -->
+    <text x="1150" y="365" fill="#475569" font-size="14.5" font-weight="500">• Limited to missense single nucleotide changes.</text>
+    <text x="1150" y="387" fill="#475569" font-size="14.5" font-weight="500">• Biased toward well-documented, structured proteins.</text>
+    <text x="1150" y="411" fill="#be123c" font-size="14.5" font-weight="800">• Completely blind to non-coding variants</text>
+    <text x="1150" y="433" fill="#be123c" font-size="14.5" font-weight="800">  and regulatory/splicing mechanisms.</text>
+  </g>
+
+  <!-- ==================== ROW 3: AlphaMissense [HIGHLIGHT] ==================== -->
+  <g>
+    <!-- Stronger border for highlight focus -->
+    <rect x="80" y="490" width="1440" height="140" rx="12" fill="#ffffff" stroke="#7c3aed" stroke-width="2.5" />
+    <!-- Highlight Badge -->
+    <rect x="85" y="495" width="8" height="130" rx="4" fill="#7c3aed" />
+
+    <!-- Col 1: Tool info -->
+    <text x="110" y="532" fill="#4c1d95" font-size="20" font-weight="800">AlphaMissense</text>
+    <text x="110" y="557" fill="#7c3aed" font-size="12" font-weight="700">v1.0 (2023)</text>
+    <text x="110" y="582" fill="#475569" font-size="12" font-style="italic">Cheng et al. (DeepMind)</text>
+    
+    <!-- Col 2: Technology -->
+    <text x="300" y="520" fill="#475569" font-size="14.5" font-weight="500">• Deep learning transformer model adapted from</text>
+    <text x="300" y="542" fill="#475569" font-size="14.5" font-weight="500">  AlphaFold2 structural prediction network.</text>
+    <text x="300" y="564" fill="#475569" font-size="14.5" font-weight="500">• Incorporates protein-sequence language modeling</text>
+    <text x="300" y="586" fill="#475569" font-size="14.5" font-weight="500">  trained on variant frequency and structural context.</text>
+
+    <!-- Col 3: Strengths -->
+    <text x="720" y="520" fill="#475569" font-size="14.5" font-weight="500">• State-of-the-art accuracy in missense classification.</text>
+    <text x="720" y="542" fill="#475569" font-size="14.5" font-weight="500">• Integrates 3D structural predictions for all human</text>
+    <text x="720" y="564" fill="#475569" font-size="14.5" font-weight="500">  proteins with unsupervised sequence contexts.</text>
+    <text x="720" y="586" fill="#475569" font-size="14.5" font-weight="500">• Classifies 89% of missense variants at high confidence.</text>
+
+    <!-- Col 4: Limitations -->
+    <text x="1150" y="520" fill="#475569" font-size="14.5" font-weight="500">• Confined to single amino acid changes.</text>
+    <text x="1150" y="542" fill="#475569" font-size="14.5" font-weight="500">• Cannot assess silent mutations or framing indels.</text>
+    <text x="1150" y="566" fill="#be123c" font-size="14.5" font-weight="800">• Completely blind to non-coding variants</text>
+    <text x="1150" y="588" fill="#be123c" font-size="14.5" font-weight="800">  or remote regulatory disruptions.</text>
+  </g>
+</svg>

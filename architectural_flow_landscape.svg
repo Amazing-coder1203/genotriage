@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%" style="background-color: transparent; font-family: 'Inter', system-ui, sans-serif;">
+  <!-- Definitions for Canva-safe Markers -->
+  <defs>
+    <!-- Simple Solid Color Marker for Arrowheads -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7c3aed" />
+    </marker>
+  </defs>
+
+  <!-- COLUMN 1: Steps 1 & 2 (Stacked Vertically) -->
+  
+  <!-- STEP 1: Input & Parsing -->
+  <g transform="translate(100, 150)">
+    <rect width="320" height="150" rx="16" fill="#ffffff" stroke="#7c3aed" stroke-width="2.5" />
+    <!-- Step Badge -->
+    <rect x="25" y="-12" width="60" height="24" rx="12" fill="#7c3aed" />
+    <text x="55" y="4" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">STEP 01</text>
+    
+    <text x="25" y="45" fill="#4c1d95" font-size="20" font-weight="800">Input &amp; Parsing</text>
+    <text x="25" y="80" fill="#475569" font-size="15" font-weight="500">Client submits raw hg38</text>
+    <text x="25" y="105" fill="#475569" font-size="15" font-weight="500">genomic coordinates</text>
+    <text x="25" y="132" fill="#4f46e5" font-size="13.5" font-family="'JetBrains Mono', monospace">Chr, Position, Ref/Alt Alleles</text>
+  </g>
+
+  <!-- Connector 1 -> 2 (Vertical Down) -->
+  <path d="M 260 300 L 260 538" fill="none" stroke="#7c3aed" stroke-width="3" stroke-dasharray="4 4" marker-end="url(#arrow)" />
+
+  <!-- STEP 2: Coordinate Normalization -->
+  <g transform="translate(100, 550)">
+    <rect width="320" height="150" rx="16" fill="#ffffff" stroke="#7c3aed" stroke-width="2.5" />
+    <!-- Step Badge -->
+    <rect x="25" y="-12" width="60" height="24" rx="12" fill="#7c3aed" />
+    <text x="55" y="4" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">STEP 02</text>
+    
+    <text x="25" y="45" fill="#4c1d95" font-size="20" font-weight="800">Normalization</text>
+    <text x="25" y="80" fill="#475569" font-size="15" font-weight="500">Structures coordinates into HGVS</text>
+    <text x="25" y="105" fill="#475569" font-size="15" font-weight="500">notation for database query</text>
+    <text x="25" y="132" fill="#4f46e5" font-size="13.5" font-family="'JetBrains Mono', monospace">MyVariant.info API endpoint</text>
+  </g>
+
+
+  <!-- COLUMN 2: Step 3 (Parallel Processing Container) -->
+
+  <!-- Connector 2 -> 3 (Flow from bottom card out to parallel blocks) -->
+  <path d="M 420 625 L 490 625" fill="none" stroke="#7c3aed" stroke-width="2.5" />
+  <path d="M 490 625 L 490 235 L 588 235" fill="none" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow)" />
+  <path d="M 490 625 L 490 450 L 588 450" fill="none" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow)" />
+  <path d="M 490 625 L 490 665 L 588 665" fill="none" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow)" />
+
+  <!-- STEP 3 Container -->
+  <rect x="550" y="100" width="500" height="700" rx="24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-dasharray="6 6" />
+  <text x="575" y="135" fill="#7c3aed" font-size="13" font-weight="800" letter-spacing="0.05em">STEP 03: PARALLEL PROCESSING LAYER</text>
+
+  <!-- 3A: Variant ID Resolution -->
+  <g transform="translate(600, 160)">
+    <rect width="420" height="150" rx="14" fill="#ffffff" stroke="#ddd6fe" stroke-width="2" />
+    <text x="25" y="40" fill="#4c1d95" font-size="18" font-weight="800">Variant ID Resolution</text>
+    <text x="25" y="70" fill="#475569" font-size="14.5" font-weight="500">Maps genomic coordinates to active dbSNP</text>
+    <text x="25" y="92" fill="#475569" font-size="14.5" font-weight="500">rsID via ClinVar/dbSNP fields inside the</text>
+    <text x="25" y="114" fill="#475569" font-size="14.5" font-weight="500">resolved MyVariant API response payload.</text>
+    <text x="25" y="138" fill="#4f46e5" font-size="13" font-weight="700" font-family="'JetBrains Mono', monospace">active dbSNP rsID</text>
+  </g>
+
+  <!-- 3B: In-Silico Feature Assembly -->
+  <g transform="translate(600, 375)">
+    <rect width="420" height="150" rx="14" fill="#ffffff" stroke="#ddd6fe" stroke-width="2" />
+    <text x="25" y="38" fill="#4c1d95" font-size="18" font-weight="800">In-Silico Feature Assembly</text>
+    <text x="25" y="66" fill="#475569" font-size="14.5" font-weight="500">Assembles predictive features (SIFT, PolyPhen,</text>
+    <text x="25" y="88" fill="#475569" font-size="14.5" font-weight="500">CADD, and gnomAD allele frequencies).</text>
+    <text x="25" y="112" fill="#be123c" font-size="14.5" font-weight="700">Drops missing metrics to a -1 floor</text>
+    <text x="25" y="134" fill="#475569" font-size="13.5" font-weight="500">to safeguard matrix mathematical calculations.</text>
+  </g>
+
+  <!-- 3C: Local ML Execution -->
+  <g transform="translate(600, 590)">
+    <rect width="420" height="150" rx="14" fill="#ffffff" stroke="#ddd6fe" stroke-width="2" />
+    <text x="25" y="40" fill="#4c1d95" font-size="18" font-weight="800">Local ML Execution</text>
+    <text x="25" y="70" fill="#475569" font-size="14.5" font-weight="500">Loads custom model to run random forest</text>
+    <text x="25" y="92" fill="#475569" font-size="14.5" font-weight="500">pathogenicity prediction under optimized</text>
+    <text x="25" y="114" fill="#475569" font-size="14.5" font-weight="500">classification threshold.</text>
+    <text x="25" y="138" fill="#7c3aed" font-size="13" font-weight="700" font-family="'JetBrains Mono', monospace">genepath_model.pkl (threshold: 0.636)</text>
+  </g>
+
+
+  <!-- COLUMN 3: Steps 4 & 5 (Stacked Vertically) -->
+
+  <!-- Connector 3 -> 4 (Merging parallel blocks into top card) -->
+  <path d="M 1020 235 L 1110 235" fill="none" stroke="#7c3aed" stroke-width="2.5" />
+  <path d="M 1020 450 L 1110 450" fill="none" stroke="#7c3aed" stroke-width="2.5" />
+  <path d="M 1020 665 L 1110 665" fill="none" stroke="#7c3aed" stroke-width="2.5" />
+  <path d="M 1110 235 L 1110 240 L 1168 240" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow)" />
+  <path d="M 1110 450 L 1110 240" fill="none" stroke="#7c3aed" stroke-width="2.5" />
+  <path d="M 1110 665 L 1110 450" fill="none" stroke="#7c3aed" stroke-width="2.5" />
+
+  <!-- STEP 4: CDSS Layer -->
+  <g transform="translate(1180, 150)">
+    <rect width="320" height="180" rx="16" fill="#ffffff" stroke="#7c3aed" stroke-width="2.5" />
+    <!-- Step Badge -->
+    <rect x="25" y="-12" width="60" height="24" rx="12" fill="#7c3aed" />
+    <text x="55" y="4" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">STEP 04</text>
+    
+    <text x="25" y="45" fill="#4c1d95" font-size="20" font-weight="800">CDSS Layer</text>
+    <text x="25" y="80" fill="#475569" font-size="15" font-weight="500">Queries PharmGKB API for</text>
+    <text x="25" y="105" fill="#475569" font-size="15" font-weight="500">drug guidelines using resolved</text>
+    <text x="25" y="130" fill="#475569" font-size="15" font-weight="500">gene symbol &amp; rsID. Filters</text>
+    <text x="25" y="158" fill="#4f46e5" font-size="14.5" font-weight="700">guidelines match server-side</text>
+  </g>
+
+  <!-- Connector 4 -> 5 (Vertical Down) -->
+  <path d="M 1340 330 L 1340 508" fill="none" stroke="#7c3aed" stroke-width="3" stroke-dasharray="4 4" marker-end="url(#arrow)" />
+
+  <!-- STEP 5: Output Generation -->
+  <g transform="translate(1180, 520)">
+    <rect width="320" height="180" rx="16" fill="#ffffff" stroke="#7c3aed" stroke-width="2.5" />
+    <!-- Step Badge -->
+    <rect x="25" y="-12" width="60" height="24" rx="12" fill="#7c3aed" />
+    <text x="55" y="4" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">STEP 05</text>
+    
+    <text x="25" y="45" fill="#4c1d95" font-size="20" font-weight="800">Output Generation</text>
+    <text x="25" y="80" fill="#475569" font-size="15" font-weight="500">Transmits unified payload to</text>
+    <text x="25" y="105" fill="#475569" font-size="15" font-weight="500">client with verdict, confidence</text>
+    <text x="25" y="130" fill="#475569" font-size="15" font-weight="500">breakdown, and actionable</text>
+    <text x="25" y="158" fill="#4f46e5" font-size="14.5" font-weight="800">drug dosing rules</text>
+  </g>
+</svg>

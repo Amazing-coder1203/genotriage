@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%" style="background-color: transparent; font-family: 'Inter', system-ui, sans-serif;">
+  <!-- Definitions for Canva-safe Markers -->
+  <defs>
+    <!-- Simple Solid Color Marker for Arrowheads -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7c3aed" />
+    </marker>
+    <!-- Warning Red Marker for Manual Workflow -->
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ef4444" />
+    </marker>
+  </defs>
+
+  <!-- Title Center Header -->
+  <text x="800" y="50" fill="#1e293b" font-size="28" font-weight="900" text-anchor="middle">Clinical Bioinformatics Pipeline Comparison</text>
+
+  <!-- Middle Dividing Line -->
+  <path d="M 800 90 L 800 840" fill="none" stroke="#cbd5e1" stroke-width="2.5" stroke-dasharray="8 8" />
+  <g>
+    <rect x="730" y="445" width="140" height="30" rx="15" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+    <text x="800" y="465" fill="#64748b" font-size="12" font-weight="800" text-anchor="middle">VS</text>
+  </g>
+
+
+  <!-- ==================== LEFT COLUMN: FRAGMENTED WORKFLOW ==================== -->
+  
+  <!-- Panel Title -->
+  <text x="430" y="110" fill="#ef4444" font-size="22" font-weight="800" text-anchor="middle">Fragmented Clinical Workflow</text>
+  
+  <!-- Clinician Card (Left) -->
+  <g transform="translate(270, 140)">
+    <rect width="320" height="80" rx="14" fill="#ffffff" stroke="#fecaca" stroke-width="2.5" />
+    <!-- Small Icon Indicator -->
+    <circle cx="35" cy="40" r="16" fill="#fef2f2" />
+    <text x="35" y="45" fill="#ef4444" font-size="16" font-weight="800" text-anchor="middle">👤</text>
+    
+    <text x="70" y="38" fill="#991b1b" font-size="16" font-weight="800">Clinician / Geneticist</text>
+    <text x="70" y="58" fill="#475569" font-size="13.5" font-weight="500">Manual query, copy-paste overhead</text>
+  </g>
+
+  <!-- Manual Query Arrows (Pointing to 3 DBs) -->
+  <!-- Arrow to ClinVar -->
+  <path d="M 330 220 L 330 274" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#arrow-red)" />
+  <text x="320" y="250" fill="#ef4444" font-size="11.5" font-weight="700" text-anchor="end">Query 1</text>
+  
+  <!-- Arrow to gnomAD -->
+  <path d="M 430 220 L 430 384" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#arrow-red)" />
+  <text x="420" y="310" fill="#ef4444" font-size="11.5" font-weight="700" text-anchor="end">Query 2</text>
+  
+  <!-- Arrow to PharmGKB -->
+  <path d="M 530 220 L 530 494" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#arrow-red)" />
+  <text x="540" y="370" fill="#ef4444" font-size="11.5" font-weight="700" text-anchor="start">Query 3</text>
+
+  <!-- Database Card 1: ClinVar -->
+  <g transform="translate(270, 280)">
+    <rect width="320" height="80" rx="12" fill="#ffffff" stroke="#fdba74" stroke-width="2" />
+    <text x="25" y="35" fill="#4c1d95" font-size="16" font-weight="800">ClinVar Portal / API</text>
+    <text x="25" y="58" fill="#475569" font-size="13.5" font-weight="500">Resolves variant pathogenicity classification</text>
+  </g>
+
+  <!-- Database Card 2: gnomAD -->
+  <g transform="translate(270, 390)">
+    <rect width="320" height="80" rx="12" fill="#ffffff" stroke="#fdba74" stroke-width="2" />
+    <text x="25" y="35" fill="#4c1d95" font-size="16" font-weight="800">gnomAD Web Browser</text>
+    <text x="25" y="58" fill="#475569" font-size="13.5" font-weight="500">Fetches population allele frequencies</text>
+  </g>
+
+  <!-- Database Card 3: PharmGKB -->
+  <g transform="translate(270, 500)">
+    <rect width="320" height="80" rx="12" fill="#ffffff" stroke="#fdba74" stroke-width="2" />
+    <text x="25" y="35" fill="#4c1d95" font-size="16" font-weight="800">PharmGKB Database</text>
+    <text x="25" y="58" fill="#475569" font-size="13.5" font-weight="500">Extracts drug dosing guidelines manually</text>
+  </g>
+
+  <!-- Return Flow Indicators (Dashed) -->
+  <path d="M 310 280 L 310 240 M 310 240 L 310 220" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3 3" />
+  <path d="M 450 390 L 450 240" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3 3" />
+  <path d="M 550 500 L 550 240" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3 3" />
+
+  <!-- Connector to synthesis -->
+  <path d="M 430 580 L 430 624" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#arrow-red)" />
+
+  <!-- Manual Decision Synthesis Card -->
+  <g transform="translate(270, 630)">
+    <rect width="320" height="170" rx="16" fill="#ffffff" stroke="#ef4444" stroke-width="2.5" />
+    <!-- Card title -->
+    <text x="25" y="38" fill="#991b1b" font-size="16" font-weight="800">Manual Decision Synthesis</text>
+    <!-- Content details -->
+    <text x="25" y="70" fill="#475569" font-size="13.5" font-weight="500">• Copious copy-paste variant coordinates</text>
+    <text x="25" y="95" fill="#475569" font-size="13.5" font-weight="500">• High risk of transcription &amp; format error</text>
+    <text x="25" y="120" fill="#475569" font-size="13.5" font-weight="500">• 15-20 min per patient; low throughput</text>
+    <text x="25" y="145" fill="#475569" font-size="13.5" font-weight="500">• Unintegrated, separate report formats</text>
+  </g>
+
+
+  <!-- ==================== RIGHT COLUMN: GENOTRIAGE WORKFLOW ==================== -->
+
+  <!-- Panel Title -->
+  <text x="1170" y="110" fill="#7c3aed" font-size="22" font-weight="800" text-anchor="middle">GenoTriage Automated Pipeline</text>
+
+  <!-- Clinician Card (Right) -->
+  <g transform="translate(1010, 140)">
+    <rect width="320" height="80" rx="14" fill="#ffffff" stroke="#ddd6fe" stroke-width="2.5" />
+    <!-- Small Icon Indicator -->
+    <circle cx="35" cy="40" r="16" fill="#f5f3ff" />
+    <text x="35" y="45" fill="#7c3aed" font-size="16" font-weight="800" text-anchor="middle">👤</text>
+    
+    <text x="70" y="38" fill="#4c1d95" font-size="16" font-weight="800">Clinician / Geneticist</text>
+    <text x="70" y="58" fill="#475569" font-size="13.5" font-weight="500">Single submission via web interface</text>
+  </g>
+
+  <!-- One-click pipeline submission arrow -->
+  <path d="M 1170 220 L 1170 254" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow)" />
+  <text x="1185" y="242" fill="#7c3aed" font-size="12" font-weight="800" text-anchor="start">Single HTTPS POST Call</text>
+
+  <!-- GenoTriage Automated Engine Box -->
+  <g transform="translate(980, 260)">
+    <!-- Container outline -->
+    <rect width="380" height="320" rx="20" fill="#ffffff" stroke="#7c3aed" stroke-width="2.5" />
+    <!-- Container Title -->
+    <text x="25" y="35" fill="#4c1d95" font-size="16" font-weight="900" letter-spacing="0.02em">GENOTRIAGE ENGINE (BACKEND)</text>
+
+    <!-- Inner step 1 -->
+    <g transform="translate(20, 60)">
+      <rect width="340" height="50" rx="8" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1.5" />
+      <text x="20" y="30" fill="#5b21b6" font-size="13.5" font-weight="800">1. Coordinate Parser &amp; Normalizer</text>
+    </g>
+
+    <!-- Inner step 2 -->
+    <g transform="translate(20, 120)">
+      <rect width="340" height="50" rx="8" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1.5" />
+      <text x="20" y="30" fill="#5b21b6" font-size="13.5" font-weight="800">2. Parallel Query &amp; Fetch (MyVariant API)</text>
+    </g>
+
+    <!-- Inner step 3 -->
+    <g transform="translate(20, 180)">
+      <rect width="340" height="50" rx="8" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1.5" />
+      <text x="20" y="30" fill="#5b21b6" font-size="13.5" font-weight="800">3. ML Inference (Pathogenicity Classifier)</text>
+    </g>
+
+    <!-- Inner step 4 -->
+    <g transform="translate(20, 240)">
+      <rect width="340" height="50" rx="8" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1.5" />
+      <text x="20" y="30" fill="#5b21b6" font-size="13.5" font-weight="800">4. PharmGKB CDSS Resolver (rsID Match)</text>
+    </g>
+  </g>
+
+  <!-- Far Right Database Cloud Layer -->
+  <!-- ClinVar Cloud Box -->
+  <g transform="translate(1410, 310)">
+    <rect width="110" height="50" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" />
+    <text x="55" y="30" fill="#475569" font-size="12" font-weight="800" text-anchor="middle">ClinVar DB</text>
+  </g>
+  <!-- gnomAD Cloud Box -->
+  <g transform="translate(1410, 395)">
+    <rect width="110" height="50" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" />
+    <text x="55" y="30" fill="#475569" font-size="12" font-weight="800" text-anchor="middle">gnomAD DB</text>
+  </g>
+  <!-- PharmGKB Cloud Box -->
+  <g transform="translate(1410, 480)">
+    <rect width="110" height="50" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" />
+    <text x="55" y="30" fill="#475569" font-size="12" font-weight="800" text-anchor="middle">PharmGKB DB</text>
+  </g>
+
+  <!-- Asynchronous communication arrows from Engine to Cloud DBs -->
+  <path d="M 1360 335 L 1402 335" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#arrow)" />
+  <path d="M 1360 420 L 1402 420" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#arrow)" />
+  <path d="M 1360 505 L 1402 505" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#arrow)" />
+
+  <!-- Output arrow -->
+  <path d="M 1170 580 L 1170 624" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow)" />
+
+  <!-- Automated CDSS Output Report Card -->
+  <g transform="translate(1010, 630)">
+    <rect width="320" height="170" rx="16" fill="#ffffff" stroke="#7c3aed" stroke-width="2.5" />
+    <!-- Card title -->
+    <text x="25" y="38" fill="#4c1d95" font-size="16" font-weight="800">Unified Output Report</text>
+    <!-- Content details -->
+    <text x="25" y="70" fill="#475569" font-size="13.5" font-weight="500">✓ Automated coordinate normalisation</text>
+    <text x="25" y="95" fill="#475569" font-size="13.5" font-weight="500">✓ Integrated ML pathogenicity scoring</text>
+    <text x="25" y="120" fill="#475569" font-size="13.5" font-weight="500">✓ Actionable PharmGKB dosing recommendations</text>
+    <text x="25" y="145" fill="#4f46e5" font-size="13.5" font-weight="800">✓ Sub-second pipeline execution (JSON)</text>
+  </g>
+</svg>
